@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Frame Converter</h2>
+
+<p>Enter # of frames</p>
+
+<input type='number' id="input" name="input"></input>
+<button onclick="convert()">Enter</button>
+
+<h3>Frames</h3>
+<p id="frames"></p>
+
+<h3>Footage</h3>
+<p id="footage"></p>
+
+<h3>Timecode</h3>
+<p id="timecode"></p>
+<script>
+function convert() {
+  var frames = document.getElementById('input').value;
+
+  var footage = Math.trunc(frames/16);
+  var timecode = Math.trunc(frames/24);
+
+  var ffleft = (frames/16-footage)*16;
+  var ftleft = Math.trunc((frames/24-timecode)*24);
+
+  document.getElementById("frames").innerHTML = frames + 'x';
+  document.getElementById("footage").innerHTML = footage + "' " + ffleft + 'x';
+  document.getElementById("timecode").innerHTML = timecode + ":" + ftleft + 'x';
+}
+</script>
+
+</body>
+</html>
