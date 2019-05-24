@@ -1,22 +1,77 @@
-<!DOCTYPE html>
-<html>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+    <style media="screen">
+      body {
+        background-color: #343a40;
+        color: white;
+      }
+
+      .title p {
+        font-style: italic;
+      }
+
+      .container {
+        padding-top: 5%;
+      }
+    </style>
+  </head>
 <body>
 
-<h2>Frame Converter</h2>
+<div class="container">
+  <div class="container title">
+    <h2>Frame Converter</h2>
+    <p>by Anneta ;)</p>
+  </div>
 
-<p>Enter # of frames</p>
+  <div class="container">
+    <div class="input-group mb-3">
+      <input type='number' id="input" name="input" class="form-control" placeholder="Number of frames" aria-label="Number of frames" aria-describedby="button-addon"></input>
+      <div class="input-group-append">
+        <button onclick="convert()" class="btn btn-light btn-outline-secondary" type="button" id="button-addon">Enter</button>
+      </div>
+    </div>
+  </div>
 
-<input type='number' id="input" name="input"></input>
-<button onclick="convert()">Enter</button>
+  <div class="container">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Frames</th>
+          <th scope="col">Timecode</th>
+          <th scope="col">Footage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="frames"></td>
+          <td id="timecode"></td>
+          <td id="footage"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<h3>Frames</h3>
-<p id="frames"></p>
+  <!-- <h3>Frames</h3>
+  <p id="frames"></p>
 
-<h3>Footage</h3>
-<p id="footage"></p>
+  <h3>Footage</h3>
+  <p id="footage"></p>
 
-<h3>Timecode</h3>
-<p id="timecode"></p>
+  <h3>Timecode</h3>
+  <p id="timecode"></p> -->
+</div>
+
 <script>
 function convert() {
   var frames = document.getElementById('input').value;
@@ -34,6 +89,9 @@ function convert() {
   document.getElementById("timecode").innerHTML = timecode + ":" + ftleft + 'x';
 }
 </script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
